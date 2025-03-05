@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import magento_SignUpLogin_Pages.RegistrationPage;
 
 public class TC001_Successful_User_Registration {
-	WebDriver driver = Hooks.driver;  // Access driver from Hooks
+	WebDriver driver = Hooks.driver;
     RegistrationPage registrationPage = new RegistrationPage(driver);
 
     @Given("User opens Magento homepage")

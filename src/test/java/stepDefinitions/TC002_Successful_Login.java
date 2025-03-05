@@ -9,11 +9,12 @@ import magento_SignUpLogin_Pages.Login_Page;
 
 
 public class TC002_Successful_Login {
-	WebDriver driver = Hooks.driver;  // Access driver from Hooks
+	WebDriver driver = Hooks.driver; 
     Login_Page loginPage = new Login_Page(driver);
 
     @Given("User opens Magento homepage")
     public void user_opens_magento_homepage() {
+    	
     }
 	@When("User clicks on Sign In")
     public void user_clicks_on_sign_in() {
