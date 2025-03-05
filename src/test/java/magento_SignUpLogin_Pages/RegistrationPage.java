@@ -33,4 +33,8 @@ public class RegistrationPage {
     public void submitForm() {
         driver.findElement(submitButton).click();
     }
+    public String getDuplicateEmailErrorMessage() {
+    	return driver.findElement(By.xpath("//div[contains(@class, 'message-error')]")).getText();
+    }
+
 }
