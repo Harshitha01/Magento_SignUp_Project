@@ -1,5 +1,8 @@
 package magento_SignUpLogin_Pages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -13,6 +16,15 @@ public class RegistrationPage {
     private final By passwordField = By.id("password");
     private final By confirmPasswordField = By.id("password-confirmation");
     private final By submitButton = By.cssSelector("button[title='Create an Account']");
+    private final By duplicateEmailErrorMessage = By.xpath("//div[contains(@class, 'message-error')]");
+    private final By invalidEmailErrorMessage = By.id("email_address-error");
+    private final By passwordStrengthErrorMessage = By.id("password-error");
+    private final By firstNameErrorMessage = By.id("firstname-error");
+    private final By lastNameErrorMessage = By.id("lastname-error");
+    private final By emailAddressErrorMessage = By.id("email_address-error");
+    private final By passwordErrorMessage = By.id("password-error");
+    private final By passwordConfirmationErrorMessage = By.id("password-confirmation-error");
+    
 
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
@@ -34,7 +46,22 @@ public class RegistrationPage {
         driver.findElement(submitButton).click();
     }
     public String getDuplicateEmailErrorMessage() {
-    	return driver.findElement(By.xpath("//div[contains(@class, 'message-error')]")).getText();
+    	return driver.findElement(duplicateEmailErrorMessage).getText();
+    }
+    public String getInvalidEmailErrorMessage() {
+    	return driver.findElement(invalidEmailErrorMessage).getText();
+    }
+    public String getErrorMessageForPasswordStrength() {
+    	return driver.findElement(passwordStrengthErrorMessage).getText();
+    }
+    public List<String> getErrorMessageForMandatoryFields() {
+    	List<String> errors = new ArrayList<>();
+        errors.add(driver.findElement(firstNameErrorMessage).getText());
+        errors.add(driver.findElement(lastNameErrorMessage).getText());
+        errors.add(driver.findElement(emailAddressErrorMessage).getText());
+        errors.add(driver.findElement(passwordErrorMessage).getText());
+        errors.add(driver.findElement(passwordConfirmationErrorMessage).getText());
+        return errors;
     }
 
 }
