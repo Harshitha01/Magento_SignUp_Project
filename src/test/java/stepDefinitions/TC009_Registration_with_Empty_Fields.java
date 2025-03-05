@@ -24,7 +24,7 @@ public class TC009_Registration_with_Empty_Fields {
     public void User_should_see_validation_errors_for_mandatory_fields() {
     	 List<String> errors = registrationPage.getErrorMessageForMandatoryFields();
     	 assertTrue(errors.contains("This is a required field."));
-        driver.quit();
+        driver.quit();	
     }
 
 }

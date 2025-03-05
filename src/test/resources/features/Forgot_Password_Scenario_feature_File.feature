@@ -1,8 +1,10 @@
 Feature: Forgot Password Functionality
 
-  Scenario: Forgot Password Functionality
+Background: 
     Given User opens Magento homepage
     When User clicks on Sign In
+
+  Scenario: Forgot Password Functionality
     And User clicks on Forgot Password link
     And User enters registered email address
     And User submits the request
