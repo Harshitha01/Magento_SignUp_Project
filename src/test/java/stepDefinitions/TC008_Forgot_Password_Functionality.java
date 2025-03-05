@@ -19,8 +19,8 @@ public class TC008_Forgot_Password_Functionality {
     }
 
     @When("User enters registered email address")
-    public void user_should_see_validation_errors_for_empty_fields() {
-    	loginPage.enterExistingEmail("Elena@example.com");
+    public void user_should_see_validation_errors_for_empty_fields(String email) {
+    	loginPage.enterExistingEmail(email);
     	
         
     }
@@ -30,9 +30,9 @@ public class TC008_Forgot_Password_Functionality {
     	
     }
     @Then("User should receive a password reset email")
-    public void user_should_receive_a_password_reset_email() {
+    public void user_should_receive_a_password_reset_email(String email) {
     	String actualErrorMessage = loginPage.passwordResetMessage();
-   	 assertTrue(actualErrorMessage.contains("If there is an account associated with harshirv@gmail.com you will receive an email with a link to reset your password."));
+   	 assertTrue(actualErrorMessage.contains("If there is an account associated with " + email + "you will receive an email with a link to reset your password."));
         driver.quit();
     }
 

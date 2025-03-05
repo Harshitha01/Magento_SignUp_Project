@@ -34,12 +34,12 @@ public class RegistrationPage {
         driver.findElement(createAccountLink).click();
     }
 
-    public void fillRegistrationForm(String firstName, String lastName, String email, String password) {
+    public void fillRegistrationForm(String firstName, String lastName, String email, String password, String confirmPassword) {
         driver.findElement(firstNameField).sendKeys(firstName);
         driver.findElement(lastNameField).sendKeys(lastName);
         driver.findElement(emailField).sendKeys(email);
         driver.findElement(passwordField).sendKeys(password);
-        driver.findElement(confirmPasswordField).sendKeys(password);
+        driver.findElement(confirmPasswordField).sendKeys(confirmPassword);
     }
 
     public void submitForm() {

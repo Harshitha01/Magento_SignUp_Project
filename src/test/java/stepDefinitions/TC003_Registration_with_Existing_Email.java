@@ -11,13 +11,8 @@ public class TC003_Registration_with_Existing_Email {
 	RegistrationPage registrationPage = new RegistrationPage(driver);
 
     @When("User fills the registration form with an email that already exists")
-    public void user_fills_the_registration_form_with_an_email_that_already_exists() {
-        registrationPage.fillRegistrationForm("Elena", "Gilbert", "Elena"+System.currentTimeMillis()+"@example.com", "ElenaGilbert123");
-    }
-
-    @When("User submits the form")
-    public void user_submits_the_form() {
-        registrationPage.submitForm();
+    public void user_fills_the_registration_form_with_an_email_that_already_exists(String firstName, String lastName, String email, String password, String confirmPassword) {
+        registrationPage.fillRegistrationForm(firstName, lastName, email, password,confirmPassword);
     }
 
     @Then("User should see an error message for duplicate email")

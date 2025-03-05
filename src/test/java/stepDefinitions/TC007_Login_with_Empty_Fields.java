@@ -13,8 +13,8 @@ public class TC007_Login_with_Empty_Fields {
 
 
     @When("User tries to log in with empty fields")
-    public void user_tries_to_log_in_with_empty_fields() {
-        loginPage.login("", ""); 
+    public void user_tries_to_log_in_with_empty_fields(String email, String password) {
+        loginPage.login(email,password); 
     }
 
     @Then("User should see validation errors for empty fields")

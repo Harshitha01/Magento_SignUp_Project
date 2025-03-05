@@ -13,13 +13,8 @@ public class TC004_Registration_with_Invalid_Email_Format {
 	RegistrationPage registrationPage = new RegistrationPage(driver);
 
     @When("User fills the registration form with invalid email format")
-    public void User_fills_the_registration_form_with_invalid_email_format() {
-        registrationPage.fillRegistrationForm("Elena", "Gilbert", "Elena"+System.currentTimeMillis()+"@example.com1", "ElenaGilbert123");
-    }
-
-    @When("User submits the form")
-    public void user_submits_the_form() {
-        registrationPage.submitForm();
+    public void User_fills_the_registration_form_with_invalid_email_format(String firstName, String lastName, String email, String password, String confirmPassword) {
+        registrationPage.fillRegistrationForm(firstName, lastName, email, password,confirmPassword);
     }
 
     @Then("User should see an error message for invalid email format")

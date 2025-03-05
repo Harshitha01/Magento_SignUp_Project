@@ -15,3 +15,12 @@ Background:
   Scenario: Login with Empty Fields
     And User tries to log in with empty fields
     Then User should see validation errors for empty fields
+    
+  Examples:
+    | email             	  | password             |
+    # User Login
+    | stefan@example.com 	  | StefanSalvatore@1234 |
+    # Invalid Credentials scenario
+    | stefan@example.com 	  | SnATKWtAmx47!j_      | 
+    # Empty fields scenario
+    |                       |                      |

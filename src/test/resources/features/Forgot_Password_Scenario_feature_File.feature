@@ -9,3 +9,10 @@ Background:
     And User enters registered email address
     And User submits the request
     Then User should receive a password reset email
+    
+  Examples:
+    | email             	  |
+    # Registered Email
+    | stefan@example.com 	  |
+    # Password Reset Email
+    | damon@example.com 	  |

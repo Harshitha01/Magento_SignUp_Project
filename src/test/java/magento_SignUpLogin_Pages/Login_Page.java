@@ -47,7 +47,7 @@ public class Login_Page {
     public void forgotPasswordLink() {
     	driver.findElement(forgotPasswordLink).click();
     }
-    public void enterExistingEmail() {
+    public void enterExistingEmail(String email) {
     	driver.findElement(enterExistingEmail).sendKeys(email);;
     }
     public void submitPasswordResetRequest() {

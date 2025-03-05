@@ -13,13 +13,8 @@ public class TC005_Registration_with_Weak_Password {
 	RegistrationPage registrationPage = new RegistrationPage(driver);
 
     @When("User fills the registration form with a weak password")
-    public void User_fills_the_registration_form_with_a_weak_password() {
-        registrationPage.fillRegistrationForm("Elena", "Gilbert", "Elena"+System.currentTimeMillis()+"@example.com1", "Elena3");
-    }
-
-    @When("User submits the form")
-    public void user_submits_the_form() {
-        registrationPage.submitForm();
+    public void User_fills_the_registration_form_with_a_weak_password(String firstName, String lastName, String email, String password, String confirmPassword) {
+        registrationPage.fillRegistrationForm(firstName, lastName, email, password,confirmPassword);
     }
 
     @Then("User should see an error message for password strength")

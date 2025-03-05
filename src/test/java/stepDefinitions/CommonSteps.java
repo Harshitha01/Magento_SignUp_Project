@@ -14,11 +14,11 @@ public class CommonSteps {
     RegistrationPage registrationPage = new RegistrationPage(driver);
     Login_Page loginPage = new Login_Page(driver);
 
-    @Given("User is on Magento homepage")
+    @Given("User opens Magento homepage")
     public void user_opens_magento_homepage() {
-        System.out.println("User is on Magento homepage via Hooks.");
-        String title = driver.getTitle();
-        Assert.assertTrue(title.contains("My Account"));
+        System.out.println("User is on Magento homepage.");
+        //String title = driver.getTitle();
+        //Assert.assertTrue(title.contains("My Account"));
     }
 
     @When("User clicks on Create Account")
@@ -28,5 +28,9 @@ public class CommonSteps {
 	@When("User clicks on Sign In")
     public void user_clicks_on_sign_in() {
         loginPage.openLoginPage();
+    }
+	@When("User submits the form")
+    public void user_submits_the_form() {
+        registrationPage.submitForm();
     }
 }

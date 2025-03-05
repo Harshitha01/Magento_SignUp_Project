@@ -12,8 +12,8 @@ public class TC006_Login_with_Invalid_Credentials {
     Login_Page loginPage = new Login_Page(driver);
 
     @When("User logs in with invalid credentials")
-    public void user_logs_in_with_invalid_credentials() {
-        loginPage.login("Elena@example.com", "Ele$"); 
+    public void user_logs_in_with_invalid_credentials(String email, String password) {
+        loginPage.login(email,password); 
     }
 
     @Then("User should see an error message for invalid login")

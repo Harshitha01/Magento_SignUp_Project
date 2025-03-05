@@ -3,6 +3,7 @@ Feature: Registration Scenarios
 Background:
 Given User opens Magento homepage
 When User clicks on Create Account
+And User submits the form
 
   Scenario: Successful User Registration
     And User fills the registration form with valid data
@@ -27,3 +28,16 @@ When User clicks on Create Account
   Scenario: Registration with Empty Fields
     And User submits the form without filling mandatory fields
     Then User should see validation errors for mandatory fields
+    
+    Examples:
+    | firstName | lastName  | email             	  | password             | confirmPassword      |
+    # User Registration
+    | Stefan    | Salvatore | stefan@example.com 	  | StefanSalvatore@1234 | StefanSalvatore@1234 |
+    # Existing user scenario
+    | Damon     | Salvatore | damon@example.com 	  | SnATKWtAmx47!j_      | SnATKWtAmx47!j_      | 
+    # Invalid Email scenario
+    | Caroline  | Forbes		| Caroline@example.com1	| CarolineForbes@123   | CarolineForbes@123   |
+    # Weak Password scenario
+    | Bonnie    | Bennett		| bonnie@example.com    | Bon1234              | Bon1234              |
+    # Empty fields scenario
+    |           | 		      |                       |                      |                      |

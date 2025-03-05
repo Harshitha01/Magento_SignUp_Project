@@ -13,8 +13,8 @@ public class TC002_Successful_Login {
 
 
     @When("User logs in with valid credentials")
-    public void user_logs_in_with_valid_credentials() {
-        loginPage.login("Elena@example.com", "ElenaGilbert123"); 
+    public void user_logs_in_with_valid_credentials(String email, String password) {
+        loginPage.login(email,password); 
     }
 
     @Then("User should see homepage after login")

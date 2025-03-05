@@ -15,8 +15,8 @@ public class TC009_Registration_with_Empty_Fields {
 	RegistrationPage registrationPage = new RegistrationPage(driver);
 
     @When("User submits the form without filling mandatory fields")
-    public void User_submits_the_form_without_filling_mandatory_fields() {
-        registrationPage.fillRegistrationForm("", "", ""+System.currentTimeMillis()+"", "");
+    public void user_submits_the_form_with_empty_fields(String firstName, String lastName, String email, String password, String confirmPassword) {
+        registrationPage.fillRegistrationForm(firstName, lastName, email, password, confirmPassword);
         registrationPage.submitForm();
     }
 
