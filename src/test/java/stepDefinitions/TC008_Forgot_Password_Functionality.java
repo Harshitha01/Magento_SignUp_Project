@@ -32,7 +32,8 @@ public class TC008_Forgot_Password_Functionality {
     @Then("User should receive a password reset email {string}")
     public void user_should_receive_a_password_reset_email(String email) {
     	String actualErrorMessage = loginPage.passwordResetMessage();
-   	 assertTrue(actualErrorMessage.contains("If there is an account associated with " + email + "you will receive an email with a link to reset your password."));
+    	System.out.println(actualErrorMessage);
+   	 assertTrue(actualErrorMessage.contains("If there is an account associated with " + email + " you will receive an email with a link to reset your password."));
         driver.quit();
     }
 

@@ -59,6 +59,8 @@ public class Login_Page {
     	driver.findElement(passwordReset).click();
     }
     public String passwordResetMessage() {
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(passwordResetConfirmationMessage));
     	return driver.findElement(passwordResetConfirmationMessage).getText();
     }
 }
