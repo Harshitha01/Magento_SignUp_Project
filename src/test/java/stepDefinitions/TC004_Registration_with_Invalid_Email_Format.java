@@ -12,8 +12,8 @@ public class TC004_Registration_with_Invalid_Email_Format {
 	WebDriver driver = Hooks.driver; 
 	RegistrationPage registrationPage = new RegistrationPage(driver);
 
-    @When("User fills the registration form with invalid email format")
-    public void User_fills_the_registration_form_with_invalid_email_format(String firstName, String lastName, String email, String password, String confirmPassword) {
+    @When("User fills the registration form with firstName {string} and lastName {string} and invalid email {string} and password {string} and confirmPassword {string}")
+    public void User_fills_the_registration_form_with_firstName_and_lastName_and_invalid_email_and_password_and_confirmPassword(String firstName, String lastName, String email, String password, String confirmPassword) {
         registrationPage.fillRegistrationForm(firstName, lastName, email, password,confirmPassword);
     }
 

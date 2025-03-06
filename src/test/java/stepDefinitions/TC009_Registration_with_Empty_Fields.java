@@ -14,8 +14,8 @@ public class TC009_Registration_with_Empty_Fields {
 	WebDriver driver = Hooks.driver; 
 	RegistrationPage registrationPage = new RegistrationPage(driver);
 
-    @When("User submits the form without filling mandatory fields")
-    public void user_submits_the_form_with_empty_fields(String firstName, String lastName, String email, String password, String confirmPassword) {
+    @When("User submits the form without filling firstName {string} and lastName {string} and email {string} and password {string} and confirmPassword {string}")
+    public void user_submits_the_form_without_filling_firstName_and_lastName_and_email_and_password_and_confirmPassword(String firstName, String lastName, String email, String password, String confirmPassword) {
         registrationPage.fillRegistrationForm(firstName, lastName, email, password, confirmPassword);
         registrationPage.submitForm();
     }

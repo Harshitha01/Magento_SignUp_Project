@@ -11,8 +11,9 @@ public class TC001_Successful_User_Registration {
     RegistrationPage registrationPage = new RegistrationPage(driver);
 
 
-    @When("User fills the registration form with valid data")
-    public void user_fills_the_registration_form_with_valid_data(String firstName, String lastName, String email, String password, String confirmPassword) {
+    @When("User fills the registration form with valid firstName {string} and lastName {string} and email {string} and password {string} and confirmPassword {string}")
+    public void user_fills_the_registration_form_with_valid_firstName_lastName_email_password_confirmPassword
+    (String firstName, String lastName, String email, String password, String confirmPassword) {
     	registrationPage.fillRegistrationForm(firstName, lastName, email, password,confirmPassword);
     }
 

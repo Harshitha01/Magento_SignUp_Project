@@ -10,8 +10,8 @@ public class TC003_Registration_with_Existing_Email {
 	WebDriver driver = Hooks.driver; 
 	RegistrationPage registrationPage = new RegistrationPage(driver);
 
-    @When("User fills the registration form with an email that already exists")
-    public void user_fills_the_registration_form_with_an_email_that_already_exists(String firstName, String lastName, String email, String password, String confirmPassword) {
+    @When("User fills the registration form with firstName {string} and lastName {string} and existing email {string} and password {string} and confirmPassword {string}")
+    public void user_fills_the_registration_form_with_firstName_and_lastName_and_existing_email_and_password_and_confirmPassword(String firstName, String lastName, String email, String password, String confirmPassword) {
         registrationPage.fillRegistrationForm(firstName, lastName, email, password,confirmPassword);
     }
 
