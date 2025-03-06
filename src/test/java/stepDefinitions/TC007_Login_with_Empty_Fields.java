@@ -12,8 +12,8 @@ public class TC007_Login_with_Empty_Fields {
     Login_Page loginPage = new Login_Page(driver);
 
 
-    @When("User tries to log in with empty fields")
-    public void user_tries_to_log_in_with_empty_fields(String email, String password) {
+    @When("User logs in with empty email {string} and empty password {string}")
+    public void user_logs_in_with_empty_email_and_empty_password(String email, String password) {
         loginPage.login(email,password); 
     }
 

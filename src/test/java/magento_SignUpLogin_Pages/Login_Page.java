@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 
 public class Login_Page {
 	WebDriver driver;
@@ -13,7 +16,7 @@ public class Login_Page {
     private final By emailField = By.id("email");
     private final By passwordField = By.id("pass");
     private final By loginButton = By.id("send2");
-    private final By invalidLoginErrorMessage = By.xpath("//div[@class='messages']//a[contains(text(),'The account sign-in was incorrect')]");
+    private final By invalidLoginErrorMessage = By.xpath("//div[contains(@class,'messages')]//div[contains(text(),'sign-in was incorrect')]");
     private final By emailAddressErrorMessage = By.id("email-error");
     private final By passwordErrorMessage = By.id("pass-error");
     private final By forgotPasswordLink = By.xpath("//a[@class='action remind']//span[contains(text(),'Forgot Your Password?')]");
@@ -36,7 +39,9 @@ public class Login_Page {
         driver.findElement(loginButton).click();
     }
     public String getInvalidLoginErrorMessage() {
-    	return driver.findElement(invalidLoginErrorMessage).getText();
+    	 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));  // 10 seconds wait
+    	 wait.until(ExpectedConditions.visibilityOfElementLocated(invalidLoginErrorMessage));
+    	 return driver.findElement(invalidLoginErrorMessage).getText();
     }
     public List<String> getErrorMessageForMandatoryFields() {
     	List<String> errors = new ArrayList<>();

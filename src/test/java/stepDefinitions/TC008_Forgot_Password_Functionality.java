@@ -18,8 +18,8 @@ public class TC008_Forgot_Password_Functionality {
         loginPage.forgotPasswordLink();
     }
 
-    @When("User enters registered email address")
-    public void user_should_see_validation_errors_for_empty_fields(String email) {
+    @When("User enters registered email {string}")
+    public void user_enters_registered_email(String email) {
     	loginPage.enterExistingEmail(email);
     	
         
@@ -29,7 +29,7 @@ public class TC008_Forgot_Password_Functionality {
     	loginPage.submitPasswordResetRequest();
     	
     }
-    @Then("User should receive a password reset email")
+    @Then("User should receive a password reset email {string}")
     public void user_should_receive_a_password_reset_email(String email) {
     	String actualErrorMessage = loginPage.passwordResetMessage();
    	 assertTrue(actualErrorMessage.contains("If there is an account associated with " + email + "you will receive an email with a link to reset your password."));

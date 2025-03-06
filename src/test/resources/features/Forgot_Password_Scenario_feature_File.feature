@@ -6,13 +6,6 @@ Background:
 
   Scenario: Forgot Password Functionality
     And User clicks on Forgot Password link
-    And User enters registered email address
+    And User enters registered email "stefan@example.com"
     And User submits the request
-    Then User should receive a password reset email
-    
-  Examples:
-    | email             	  |
-    # Registered Email
-    | stefan@example.com 	  |
-    # Password Reset Email
-    | damon@example.com 	  |
+    Then User should receive a password reset email "damon@example.com"
